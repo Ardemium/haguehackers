@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Hague Hackers is an academic and community-driven ethical hacking group aiming to enhance global cybersecurity awareness.">
+
+    <!-- Title and Favicon -->
+    <title>The Hague Hackers - Home</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Fonts and Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Graduate&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="The Hague Hackers Logo">
+            </a>
+            <!-- Navigation -->
+            <nav class="main-nav" aria-label="Main Navigation">
+                <!-- Menu Toggle Button for Mobile -->
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html">HOME</a></li>
+                    <li class="nav-item"><a href="about.html">OUR MISSION</a></li>
+                    <li class="nav-item"><a href="activities.html">ACTIVITIES</a></li>
+                    <li class="nav-item"><a href="contact.html">JOIN US</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>HAGUE HACKERS</h1>
+                <h2>Making the digital world safer through education</h2>
+                <a href="about.html" class="btn">Learn More</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2>Our Focus Areas</h2>
+                <div class="feature-grid">
+                    <article class="feature-item">
+                        <img src="img/education.jpg" alt="Education and Knowledge Sharing" loading="lazy">
+                        <h3>Education and Knowledge Sharing</h3>
+                        <p>Collaborative learning to empower individuals with cybersecurity expertise.</p>
+                        <a href="education.html" class="btn">Learn More</a>
+                    </article>
+                    <article class="feature-item">
+                        <img src="img/ctf.jpg" alt="Capture the Flag Competitions" loading="lazy">
+                        <h3>Capture the Flag Competitions</h3>
+                        <p>Hands-on experience through participation in high-pressure CTF events.</p>
+                        <a href="ctf.html" class="btn">Learn More</a>
+                    </article>
+                    <article class="feature-item">
+                        <img src="img/ethical_hacking.jpg" alt="Ethical Commitment" loading="lazy">
+                        <h3>Ethical Commitment</h3>
+                        <p>Adhering to a strict ethical code to ensure responsible and legal hacking practices.</p>
+                        <a href="ethics.html" class="btn">Learn More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact">
+            <div class="container">
+                <h2>Get Involved</h2>
+                <p>Interested in joining Hague Hackers or collaborating with us? Reach out!</p>
+                <form action="/submit" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="Your Email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Hague Hackers. All rights reserved.</p>
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript File -->
+    <script src="js/main.js"></script>
+</body>
+</html>
