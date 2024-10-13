@@ -2,9 +2,12 @@
 
 /* CSS Variables */
 :root {
-    --primary-color: #0d0d0d; /* Dark background color */
-    --secondary-color: #2d5425; /* Bright green for highlights */
-    --font-main: 'Roboto Mono', monospace; /* Monospace font for coding feel */
+    /* Dark background color */
+    --primary-color: #0d0d0d;
+    /* Green for highlights */
+    --secondary-color: #2d5425;
+    /* Monospace font for coding feel */
+    --font-main: 'Roboto Mono', monospace;
     --dark-color: #0d0d0d;
     --light-color: #f0f0f0;
 }
