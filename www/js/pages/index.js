@@ -9,6 +9,7 @@ export const pageSetupConfig = {
     ],
     components: [
         { url: './components/navigation.js', initFunction: 'setupNavigation' },
+        { url: './components/keyboard-effect.js', initFunction: 'setupKeyboardEffect' },
         { url: './components/supporters.js', initFunction: 'setupSupporters' }
         // Additional components can be added here
     ]

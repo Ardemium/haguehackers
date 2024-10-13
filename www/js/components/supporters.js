@@ -8,7 +8,7 @@ export function setupSupporters() {
         // Remove all previously duplicated items (keep only the original ones)
         const originalItems = [...supportersItems]; // Convert NodeList to array of the original items
         supportersTrack.innerHTML = ''; // Clear the track
-        
+
         // Re-append original items to the track
         originalItems.forEach(item => {
             supportersTrack.appendChild(item);

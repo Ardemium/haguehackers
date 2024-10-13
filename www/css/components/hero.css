@@ -26,16 +26,51 @@
     z-index: 1;
 }
 
+/* New containers for H1 and H2 */
+.h1-container {
+    height: 80px;
+    /* Set a fixed height for the H1 container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Ensures text doesn't overflow */
+}
+
+.h2-container {
+    height: 60px;
+    /* Set a fixed height for the H2 container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Ensures text doesn't overflow */
+}
+
+.button-container {
+    margin-top: 20px;
+    /* Adds some space between the h2 and the button */
+    display: flex;
+    justify-content: center;
+}
+
 .hero h1 {
     font-family: 'Graduate', sans-serif;
     font-size: 48px;
-    margin-bottom: 20px;
+    margin: 0;
+    /* Remove margin to prevent additional height */
 }
 
 .hero h2 {
     font-family: 'Graduate', sans-serif;
     font-size: 24px;
-    margin-bottom: 40px;
+    margin: 0;
+    /* Remove margin to prevent additional height */
+}
+
+a.btn {
+    margin-top: 20px;
+    /* Adds some space between the h2 and the button */
 }
 
 @media (max-width: 480px) {
@@ -45,5 +80,15 @@
 
     .hero h2 {
         font-size: 18px;
+    }
+
+    .h1-container {
+        height: 60px;
+        /* Adjust height for smaller screens */
+    }
+
+    .h2-container {
+        height: 80px;
+        /* Adjust height for smaller screens */
     }
 }
