@@ -11,24 +11,28 @@ function initializePage() {
             const pageSetupConfig = module.pageSetupConfig; // Assuming the module exports a pageSetupConfig object
             const headPartialUrl = getHeadPartialUrl();
 
-            // Load head partial
-            loadPartial(headPartialUrl, '#head-placeholder')
+            // Load head partial first
+            return loadPartial(headPartialUrl, '#head-placeholder')
                 .then(() => {
-                    // Load the partials and components as per pageSetupConfig
-                    const { partials, components } = pageSetupConfig;
+                    const { partials = [], components = [] } = pageSetupConfig;
 
-                    return Promise.all([loadPartials(partials), loadComponents(components)]);
-                })
-                .then(() => {
-                    console.log('Page initialized successfully');
-                })
-                .catch(handleError);
+                    // First load the partials
+                    return loadPartials(partials)
+                        .then(() => {
+                            // After partials are loaded, load components
+                            return loadComponents(components);
+                        });
+                });
+        })
+        .then(() => {
+            console.log('Page initialized successfully');
         })
         .catch(error => {
-            console.error('Error loading page-specific JS file:', error);
+            console.error('Error during page initialization:', error);
             handleError(error);
         });
 }
+
 
 function getPageName() {
     const currentPage = window.location.pathname.split('/').pop(); // Get the current file name from the URL

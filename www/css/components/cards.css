@@ -2,7 +2,7 @@
 
 /* Cards Section */
 .cards {
-    padding: 60px 0;
+    padding: 40px 0;
     background-color: var(--primary-color);
 }
 
@@ -14,10 +14,11 @@
 }
 
 .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+    /* Center items when uneven */
 }
 
 .card-item {
@@ -30,6 +31,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 330px;
+    /* Set a fixed width to maintain card size */
 }
 
 .card-item img {
@@ -41,24 +44,26 @@
 
 .card-item h3 {
     margin-bottom: 15px;
-    color: var(--secondary-color);
+    color: var(--light-color);
     flex-grow: 1;
-    /* Allow the heading and content to grow */
 }
 
 .card-item p {
     margin-bottom: 20px;
     flex-grow: 1;
-    /* Allow the paragraph to grow and take up space */
 }
 
 .card-item a.btn {
     margin-top: auto;
-    /* Push the button to the bottom */
 }
 
 /* Responsive Cards */
 @media (max-width: 768px) {
+    .card-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .card-item {
         padding: 15px;
     }

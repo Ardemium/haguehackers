@@ -69,13 +69,3 @@ a:focus {
         padding: 15px 0;
     }
 }
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero h2 {
-        font-size: 18px;
-    }
-}

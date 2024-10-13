@@ -88,3 +88,43 @@
 .contact button:focus {
     background-color: #87FC6F;
 }
+
+/* Media Query for 768px screens (tablets) */
+@media (max-width: 768px) {
+    .contact form {
+        padding: 0 40px;
+        /* Add padding to form */
+    }
+
+    .contact input,
+    .contact textarea,
+    .contact button {
+        width: calc(100% - 80px);
+        /* Adjust width for padding */
+        margin: 0 auto;
+    }
+
+    .contact button {
+        margin-top: 15px;
+    }
+}
+
+/* Media Query for 480px screens (mobile phones) */
+@media (max-width: 480px) {
+    .contact form {
+        padding: 0 20px;
+        /* Add padding to form */
+    }
+
+    .contact input,
+    .contact textarea,
+    .contact button {
+        width: calc(100% - 40px);
+        /* Adjust width for smaller screens */
+        margin: 0 auto;
+    }
+
+    .contact button {
+        margin-top: 10px;
+    }
+}
