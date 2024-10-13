@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', initializePage);
  */
 const pageSetupConfig = {
     partials: [
-        { url: 'includes/head.html', selector: '#head-placeholder' },
         { url: 'includes/header.html', selector: '#header-placeholder' },
         { url: 'includes/hero.html', selector: '#hero-placeholder' },
         { url: 'includes/cards.html', selector: '#cards-placeholder' },
@@ -24,14 +23,18 @@ const pageSetupConfig = {
 };
 
 /**
- * Initializes the page by loading partials and components concurrently.
- * Once all partials and components are loaded, the page is considered initialized.
+ * Initializes the page by first loading the head partial, and then other partials and components concurrently.
  */
 function initializePage() {
-    const { partials, components } = pageSetupConfig;
+    // Load head partial first
+    loadPartial('includes/head.html', '#head-placeholder')
+        .then(() => {
+            // After head is loaded, load remaining partials and components concurrently
+            const { partials, components } = pageSetupConfig;
 
-    // Load partials and components concurrently
-    Promise.all([loadPartials(partials), loadComponents(components)])
+            // Load partials and components concurrently
+            return Promise.all([loadPartials(partials), loadComponents(components)]);
+        })
         .then(() => {
             console.log('Page initialized successfully');
         })
