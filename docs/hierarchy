@@ -1,53 +1,52 @@
 /www (or /public_html, /htdocs)
-├── /assets
-│   ├── /css
-│   │   ├── global.css                 # Global stylesheet for the entire site
-│   │   ├── /components                # Styles for reusable components
-│   │   │   ├── header.css
-│   │   │   ├── footer.css
-│   │   │   └── navigation.css
-│   │   └── /pages                     # Page-specific stylesheets
-│   │       ├── home.css
-│   │       ├── about.css
-│   │       ├── contact.css
-│   │       ├── blog.css
-│   │       └── intranet.css
-│   ├── /js
-│   │   ├── global.js                  # Global JavaScript file
-│   │   ├── /components                # JavaScript for reusable components
-│   │   │   ├── navigation.js
-│   │   │   ├── slider.js
-│   │   │   └── modal.js
-│   │   └── /pages                     # Page-specific JavaScript files
-│   │       ├── home.js
-│   │       ├── contact.js
-│   │       ├── blog.js
-│   │       └── intranet.js
-│   ├── /images
-│   │   ├── favicon.ico                # Site favicon
-│   │   ├── /logo                      # Images used in components
-│   │   │   └── logo.png
-│   │   │── /icons
-│   │   │   └── icon-twitter.png
-│   │   └── /pages                     # Page-specific images
-│   │       ├── /about
-│   │       │   └── team.jpg
-│   │       ├── /contact
-│   │       │   └── office.jpg
-│   │       ├── /blog
-│   │       │   └── blog-post1.jpg
-│   │       └── /intranet
-│   │           └── intranet-logo.png
-│   ├── /fonts
-│   │   ├── /roboto                    # Font family files
-│   │   │   ├── roboto-regular.woff2
-│   │   │   └── roboto-bold.woff2
-│   │   └── /font-awesome              # Font Awesome files
-│   │       └── fa-solid-900.woff2
-│   ├── /videos
-│   │   └── promo.mp4                  # Video files for the site
-│   └── /downloads
-│       └── report.pdf                 # Files available for user download
+├── /css
+│   ├── global.css                     # Global stylesheet for the entire site
+│   ├── /components                    # Styles for reusable components
+│   │   ├── header.css
+│   │   ├── footer.css
+│   │   └── navigation.css
+│   └── /pages                         # Page-specific stylesheets
+│       ├── home.css
+│       ├── about.css
+│       ├── contact.css
+│       ├── blog.css
+│       └── intranet.css
+├── /js
+│   ├── global.js                      # Global JavaScript file
+│   ├── /components                    # JavaScript for reusable components
+│   │   ├── navigation.js
+│   │   ├── slider.js
+│   │   └── modal.js
+│   └── /pages                         # Page-specific JavaScript files
+│       ├── home.js
+│       ├── contact.js
+│       ├── blog.js
+│       └── intranet.js
+├── /images
+│   ├── favicon.ico                    # Site favicon
+│   ├── /logo                          # Images used in components
+│   │   └── logo.png
+│   │── /icons
+│   │   └── icon-twitter.png
+│   └── /pages                         # Page-specific images
+│       ├── /about
+│       │   └── team.jpg
+│       ├── /contact
+│       │   └── office.jpg
+│       ├── /blog
+│       │   └── blog-post1.jpg
+│       └── /intranet
+│           └── intranet-logo.png
+├── /fonts
+│   ├── /roboto                        # Font family files
+│   │   ├── roboto-regular.woff2
+│   │   └── roboto-bold.woff2
+│   └── /font-awesome                  # Font Awesome files
+│       └── fa-solid-900.woff2
+├── /videos
+│   └── promo.mp4                      # Video files for the site
+├── /downloads
+│   └── report.pdf                     # Files available for user download
 ├── /vendor                            # External libraries and plugins
 │   ├── /css
 │   │   ├── bootstrap.min.css          # Bootstrap CSS
@@ -61,22 +60,16 @@
 │   ├── header.html
 │   ├── footer.html
 │   └── sidebar.html
-├── /uploads                           # User-uploaded content
-│   ├── /images                        # Uploaded images
-│   │   └── user1-profile.jpg
-│   └── /documents                     # Uploaded documents
-│       └── user-report.pdf
-├── /pages                             # Main content pages
-│   ├── index.html                     # Home page
-│   ├── about.html
-│   ├── contact.html
-│   ├── /blog                          # Blog section
-│   │   ├── post1.html
-│   │   └── post2.html
-│   ├── /services                      # Services section
-│   │   ├── cybersecurity.html
-│   │   └── penetration-testing.html
-│   └── /events                        # Events section
+├── index.html                         # Home page
+├── about.html
+├── contact.html
+├── /blog                              # Blog section
+│   ├── post1.html
+│   └── post2.html
+├── /services                          # Services section
+│   ├── cybersecurity.html
+│   └── penetration-testing.html
+├── /events                            # Events section
 │       ├── event-nov-2024.html
 │       └── ctf-dec-2024.html
 ├── /intranet                          # Intranet-specific pages and assets

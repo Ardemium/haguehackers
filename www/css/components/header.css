@@ -47,6 +47,7 @@ header .container {
     display: block;
     padding: 8px 12px;
     transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
 }
 
 .nav-item a:hover,
