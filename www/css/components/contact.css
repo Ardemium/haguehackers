@@ -1,0 +1,70 @@
+/* contact.css */
+
+/* Contact Section */
+.contact {
+    padding: 60px 0;
+    background-color: var(--primary-color);
+}
+
+.contact h2 {
+    font-family: 'Graduate', sans-serif;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--light-color);
+}
+
+.contact p {
+    text-align: center;
+    color: var(--light-color);
+    margin-bottom: 40px;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--light-color);
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: var(--light-color);
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.contact button {
+    display: block;
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover,
+.contact button:focus {
+    background-color: #87FC6F;
+}

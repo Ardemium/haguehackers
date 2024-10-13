@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+// components/navigation.js
+export function setupNavigation() {
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     const navList = document.querySelector('.nav-list');
@@ -16,4 +17,4 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.setAttribute('aria-expanded', 'false');
         }
     });
-});
+}
