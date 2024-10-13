@@ -4,6 +4,26 @@
 .contact {
     padding: 60px 0;
     background-color: var(--primary-color);
+    background-image: url('../../img/pages/contact/cable.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+}
+
+.contact::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 13, 13, 0.8);
+}
+
+.contact-content {
+    position: relative;
+    z-index: 1;
 }
 
 .contact h2 {
