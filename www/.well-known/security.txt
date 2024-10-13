@@ -1,0 +1,30 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+# {Custom Domain} domains can use a 302 redirect to point to the central file
+# at {Central URL}, as {Organization} is the main contact point for vulnerabilities
+# and incidents.
+#
+# {Domain's Language Description for Redirects and Purpose}
+
+Expires: {Expiration Date in ISO 8601 Format}
+Canonical: {Canonical URL for security.txt}
+
+Policy: {Policy URL 1}
+Policy: {Policy URL 2}
+
+Contact: {Contact URL 1}
+Contact: {Contact URL 2}
+Contact: mailto:{Contact Email}
+Encryption: {PGP Key URL}
+Preferred-Languages: {Language List}
+
+Acknowledgments: {Acknowledgments URL}
+Hiring: {Hiring URL}
+
+-----BEGIN PGP SIGNATURE-----
+Version: {PGP Software and Version Information}
+Charset: utf-8
+
+{PGP Signature Block}
+-----END PGP SIGNATURE-----

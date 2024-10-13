@@ -6,7 +6,8 @@ export const pageSetupConfig = {
         { url: 'includes/components/footer.html', selector: '#footer-placeholder' }
     ],
     components: [
-        { path: '../components/navigation.js', initFunction: 'setupNavigation' }
+        { url: './components/navigation.js', initFunction: 'setupNavigation' },
+        { url: './components/mailto.js', initFunction: 'setupContactForm' }
         // Additional components can be added here
     ]
 };

@@ -17,6 +17,7 @@ header .container {
 
 .logo img {
     max-height: 50px;
+    margin-top: 6px;
 }
 
 /* Navigation */

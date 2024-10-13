@@ -14,21 +14,22 @@
 }
 
 .card-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     justify-content: center;
 }
 
 .card-item {
-    flex: 1 1 calc(33% - 60px);
-    max-width: calc(33% - 60px);
     background-color: #1a1a1a;
     padding: 20px;
     text-align: center;
     border: 1px solid #333;
     border-radius: 5px;
     color: var(--light-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-item img {
@@ -41,23 +42,30 @@
 .card-item h3 {
     margin-bottom: 15px;
     color: var(--secondary-color);
+    flex-grow: 1;
+    /* Allow the heading and content to grow */
 }
 
 .card-item p {
     margin-bottom: 20px;
+    flex-grow: 1;
+    /* Allow the paragraph to grow and take up space */
+}
+
+.card-item a.btn {
+    margin-top: auto;
+    /* Push the button to the bottom */
 }
 
 /* Responsive Cards */
 @media (max-width: 768px) {
     .card-item {
-        flex: 1 1 calc(50% - 30px);
-        max-width: calc(50% - 30px);
+        padding: 15px;
     }
 }
 
 @media (max-width: 480px) {
     .card-item {
-        flex: 1 1 100%;
-        max-width: 100%;
+        padding: 10px;
     }
 }

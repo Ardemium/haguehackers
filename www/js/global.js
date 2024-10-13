@@ -41,9 +41,6 @@ function getHeadPartialUrl() {
     return `includes/pages/${pageName}-head.html`;
 }
 
-// Rest of your existing functions: loadPartial, loadPartials, loadComponents, checkResponse, insertPartial, handleError
-
-
 /**
  * Loads multiple partials from the provided configuration.
  * 
@@ -97,24 +94,24 @@ function insertPartial(content, selector) {
 }
 
 /**
- * Dynamically loads components from the provided configuration.
- * Each component is dynamically imported, and its specified initialization function is called.
+ * Dynamically imports components from the provided configuration.
+ * Each component is imported as an ES module, and its specified initialization function is called.
  * 
- * @param {Array<Object>} components - Array of component objects with `path` and `initFunction` keys.
+ * @param {Array<Object>} components - Array of component objects with `url` and `initFunction` keys.
  * @returns {Promise} - A promise that resolves when all components are loaded and initialized.
  */
 function loadComponents(components) {
-    return Promise.all(components.map(({ path, initFunction }) => {
-        return import(path)
+    return Promise.all(components.map(({ url, initFunction }) => {
+        return import(url)
             .then(module => {
                 if (module[initFunction] && typeof module[initFunction] === 'function') {
                     module[initFunction](); // Initialize the component.
                 } else {
-                    console.warn(`Initialization function ${initFunction} not found in ${path}`);
+                    console.warn(`Initialization function ${initFunction} not found in module ${url}`);
                 }
             })
             .catch(error => {
-                console.error(`Error loading component ${path}:`, error);
+                console.error(`Error loading component ${url}:`, error);
             });
     }));
 }
