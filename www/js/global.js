@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', initializePage);
  */
 const pageSetupConfig = {
     partials: [
-        { url: 'includes/header.html', selector: '#header-placeholder' },
-        { url: 'includes/hero.html', selector: '#hero-placeholder' },
-        { url: 'includes/cards.html', selector: '#cards-placeholder' },
-        { url: 'includes/contact.html', selector: '#contact-placeholder' },
-        { url: 'includes/footer.html', selector: '#footer-placeholder' }
+        { url: 'includes/components/header.html', selector: '#header-placeholder' },
+        { url: 'includes/components/hero.html', selector: '#hero-placeholder' },
+        { url: 'includes/components/cards.html', selector: '#cards-placeholder' },
+        { url: 'includes/components/contact.html', selector: '#contact-placeholder' },
+        { url: 'includes/components/footer.html', selector: '#footer-placeholder' }
     ],
     components: [
         { path: './components/navigation.js', initFunction: 'setupNavigation' }
@@ -23,13 +23,16 @@ const pageSetupConfig = {
 };
 
 /**
- * Initializes the page by first loading the head partial, and then other partials and components concurrently.
+ * Initializes the page by first loading the appropriate head partial based on the current URL,
+ * and then loading other partials and components concurrently.
  */
 function initializePage() {
-    // Load head partial first
-    loadPartial('includes/head.html', '#head-placeholder')
+    const headPartialUrl = getHeadPartialUrl(); // Dynamically determine the head partial based on the current URL
+
+    // Load the dynamically selected head partial first
+    loadPartial(headPartialUrl, '#head-placeholder')
         .then(() => {
-            // After head is loaded, load remaining partials and components concurrently
+            // After the head is loaded, load remaining partials and components concurrently
             const { partials, components } = pageSetupConfig;
 
             // Load partials and components concurrently
@@ -39,6 +42,19 @@ function initializePage() {
             console.log('Page initialized successfully');
         })
         .catch(handleError);
+}
+
+/**
+ * Determines the head partial URL based on the current page URL.
+ * For example, if the page is 'index.html', it returns 'includes/index-head.html'.
+ * 
+ * @returns {string} - The URL of the head partial to load.
+ */
+function getHeadPartialUrl() {
+    const currentPage = window.location.pathname.split('/').pop(); // Get the current file name from the URL
+    const pageName = currentPage.split('.')[0]; // Extract the page name (e.g., 'index' or 'about')
+
+    return `includes/pages/${pageName}-head.html`; // Construct the head partial URL (e.g., 'includes/index-head.html')
 }
 
 /**
