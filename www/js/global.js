@@ -1,61 +1,48 @@
 // global.js
-// Import navigation component as an example; more components can be added similarly.
-import { setupNavigation } from './components/navigation.js';
-
 document.addEventListener('DOMContentLoaded', initializePage);
 
-/**
- * Configuration object for managing page setup.
- * Contains the partials and components to be loaded dynamically.
- */
-const pageSetupConfig = {
-    partials: [
-        { url: 'includes/components/header.html', selector: '#header-placeholder' },
-        { url: 'includes/components/hero.html', selector: '#hero-placeholder' },
-        { url: 'includes/components/cards.html', selector: '#cards-placeholder' },
-        { url: 'includes/components/contact.html', selector: '#contact-placeholder' },
-        { url: 'includes/components/footer.html', selector: '#footer-placeholder' }
-    ],
-    components: [
-        { path: './components/navigation.js', initFunction: 'setupNavigation' }
-        // Additional components can be added here as { path: './components/<component>.js', initFunction: '<initializeFunction>' }
-    ]
-};
-
-/**
- * Initializes the page by first loading the appropriate head partial based on the current URL,
- * and then loading other partials and components concurrently.
- */
 function initializePage() {
-    const headPartialUrl = getHeadPartialUrl(); // Dynamically determine the head partial based on the current URL
+    const pageName = getPageName(); // e.g., 'index', 'contact'
+    const pageJsPath = `./pages/${pageName}.js`;
 
-    // Load the dynamically selected head partial first
-    loadPartial(headPartialUrl, '#head-placeholder')
-        .then(() => {
-            // After the head is loaded, load remaining partials and components concurrently
-            const { partials, components } = pageSetupConfig;
+    // Dynamically import the per-page JS module
+    import(pageJsPath)
+        .then(module => {
+            const pageSetupConfig = module.pageSetupConfig; // Assuming the module exports a pageSetupConfig object
+            const headPartialUrl = getHeadPartialUrl();
 
-            // Load partials and components concurrently
-            return Promise.all([loadPartials(partials), loadComponents(components)]);
+            // Load head partial
+            loadPartial(headPartialUrl, '#head-placeholder')
+                .then(() => {
+                    // Load the partials and components as per pageSetupConfig
+                    const { partials, components } = pageSetupConfig;
+
+                    return Promise.all([loadPartials(partials), loadComponents(components)]);
+                })
+                .then(() => {
+                    console.log('Page initialized successfully');
+                })
+                .catch(handleError);
         })
-        .then(() => {
-            console.log('Page initialized successfully');
-        })
-        .catch(handleError);
+        .catch(error => {
+            console.error('Error loading page-specific JS file:', error);
+            handleError(error);
+        });
 }
 
-/**
- * Determines the head partial URL based on the current page URL.
- * For example, if the page is 'index.html', it returns 'includes/index-head.html'.
- * 
- * @returns {string} - The URL of the head partial to load.
- */
-function getHeadPartialUrl() {
+function getPageName() {
     const currentPage = window.location.pathname.split('/').pop(); // Get the current file name from the URL
-    const pageName = currentPage.split('.')[0]; // Extract the page name (e.g., 'index' or 'about')
-
-    return `includes/pages/${pageName}-head.html`; // Construct the head partial URL (e.g., 'includes/index-head.html')
+    const pageName = currentPage.split('.')[0]; // Extract the page name (e.g., 'index' or 'contact')
+    return pageName || 'index'; // Default to 'index' if pageName is empty (e.g., if URL ends with '/')
 }
+
+function getHeadPartialUrl() {
+    const pageName = getPageName();
+    return `includes/pages/${pageName}-head.html`;
+}
+
+// Rest of your existing functions: loadPartial, loadPartials, loadComponents, checkResponse, insertPartial, handleError
+
 
 /**
  * Loads multiple partials from the provided configuration.
