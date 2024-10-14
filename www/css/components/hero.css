@@ -2,7 +2,15 @@
 
 /* Hero Section */
 .hero {
-    background-image: url('../../img/pages/index/hero-bg.jpg');
+    background-image: linear-gradient(to top,
+            var(--dark-color) 0%,
+            /* Dark at the bottom */
+            rgba(13, 13, 13, 0.8) 5%,
+            /* Keep it dark until 50% height */
+            rgba(13, 13, 13, 0) 100%
+            /* Gradually fade to transparent from 50% to 100% */
+        ),
+        url('../../img/pages/index/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     color: var(--light-color);
@@ -10,6 +18,7 @@
     padding: 100px 20px;
     position: relative;
 }
+
 
 .hero::after {
     content: '';
@@ -19,7 +28,10 @@
     right: 0;
     bottom: 0;
     background: rgba(13, 13, 13, 0.8);
+    pointer-events: none;
+    /* Prevents interaction with the after element */
 }
+
 
 .hero-content {
     position: relative;

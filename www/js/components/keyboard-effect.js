@@ -31,7 +31,7 @@ export function setupKeyboardEffect() {
         if (currentH2CharIndex < h2Text.length) {
             h2Element.textContent += h2Text[currentH2CharIndex];
             currentH2CharIndex++;
-            const typingSpeed = Math.floor(Math.random() * (80 - 40 + 1)) + 40;
+            const typingSpeed = Math.floor(Math.random() * (80 - 40 + 1));
             setTimeout(typeH2, typingSpeed);
         } else {
             startCursorBlinking(h2Element);

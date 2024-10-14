@@ -15,9 +15,15 @@ header .container {
     justify-content: space-between;
 }
 
+header a {
+    max-height: 50px;
+}
+
 .logo img {
     max-height: 50px;
-    margin-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #2d5425;
 }
 
 /* Navigation */
