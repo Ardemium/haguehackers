@@ -47,7 +47,7 @@
         transform: translateX(0);
     }
 
-    100% {
+    50% {
         transform: translateX(-50%);
         /* Scroll halfway (half the width of all items) */
     }

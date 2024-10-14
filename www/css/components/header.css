@@ -98,4 +98,11 @@ header a {
     .menu-toggle {
         display: block;
     }
+
+    .nav-item a:hover,
+    .nav-item a:focus {
+        background-color: var(--dark-color);
+        color: var(--secondary-color);
+        border-radius: 5px;
+    }
 }
