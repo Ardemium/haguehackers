@@ -6,7 +6,7 @@
             var(--dark-color) 0%,
             /* Dark at the bottom */
             rgba(13, 13, 13, 0.8) 5%,
-            /* Keep it dark until 50% height */
+            /* Keep it dark until 5% height */
             rgba(13, 13, 13, 0) 100%
             /* Gradually fade to transparent from 50% to 100% */
         ),

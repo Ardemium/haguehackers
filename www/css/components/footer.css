@@ -1,16 +1,38 @@
-/* footer.css */
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* This ensures that the main content area expands to fill the space between the header and footer */
+}
 
 /* Footer */
 footer {
     background-color: #0d0d0d;
     color: var(--light-color);
     padding: 20px 0;
+    text-align: center; /* Moved to the footer to apply globally to the footer content */
 }
 
+/* Footer container */
 footer .container {
     text-align: center;
 }
 
+/* Footer navigation */
 .footer-nav ul {
     list-style: none;
     padding: 0;
@@ -30,6 +52,7 @@ footer .container {
     text-decoration: underline;
 }
 
+/* Social icons */
 .social-icons {
     margin-top: 15px;
 }
